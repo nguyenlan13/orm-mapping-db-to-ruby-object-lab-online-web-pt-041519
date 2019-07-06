@@ -10,6 +10,7 @@ class Student
     student
   end
 
+
   def self.all
     # retrieve all the rows from the "Students" database
     # remember each row should be a new instance of the Student class
@@ -22,6 +23,7 @@ class Student
       self.new_from_db(row)
     end
   end
+
 
   def self.find_by_name(name)
     # find the student in the database given a name
@@ -38,6 +40,7 @@ class Student
     end
   end
   
+  
   def save
     sql = <<-SQL
       INSERT INTO students (name, grade) 
@@ -46,6 +49,7 @@ class Student
 
     DB[:conn].execute(sql, self.name, self.grade)
   end
+  
   
   def self.create_table
     sql = <<-SQL
@@ -58,6 +62,7 @@ class Student
 
     DB[:conn].execute(sql)
   end
+  
 
   def self.drop_table
     sql = "DROP TABLE IF EXISTS students"
