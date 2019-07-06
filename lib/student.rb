@@ -94,13 +94,15 @@ class Student
     end
   end
   
-   def self.students_below_12th_grade
+   def self.first_student_in_grade_10
     sql = <<-SQL
       SELECT COUNT(*)
       from students
-      WHERE grade < 12;
+      WHERE grade = 10
+      LIMIT 1;
     SQL
-    DB[:conn].execute(sql).map do |row|
+    
+    DB[:conn].execute(sql)
       self.new_from_db(row)
     end
   end
