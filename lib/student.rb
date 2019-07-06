@@ -99,6 +99,7 @@ class Student
       SELECT COUNT(*)
       from students
       WHERE grade = 10
+      ORDER BY student.id
       LIMIT 1;
     SQL
     
