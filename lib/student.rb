@@ -16,8 +16,7 @@ class Student
     sql = <<-SQL
       SELECT *
       FROM songs
-      SQL
-    
+    SQL
   end
 
   def self.find_by_name(name)
