@@ -69,7 +69,7 @@ class Student
     DB[:conn].execute(sql)
   end
   
-  def studes_in_grade_9th
+  def self.all_students_in_grade_9
   
     sql = <<-SQL
       SELECT COUNT(*)
@@ -81,5 +81,9 @@ class Student
       self.new_from_db(row)
     end
   end
+  
+  def self.
+  
+  
   
 end
