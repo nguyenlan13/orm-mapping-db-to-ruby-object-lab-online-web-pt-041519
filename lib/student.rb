@@ -99,8 +99,7 @@ class Student
       SELECT COUNT(*)
       FROM students
       WHERE grade = 10
-      ORDER BY students.id 
-      LIMIT 1;
+      ORDER BY students.id LIMIT 1;
     SQL
     
     DB[:conn].execute(sql).map do |row|
